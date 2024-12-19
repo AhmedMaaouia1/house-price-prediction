@@ -60,20 +60,20 @@ minikube service house-price-service --url
 
 ## 📁 Structure du projet
 house-price-prediction/
-├── src/                  # Code source de l'application Flask
-│   ├── app.py            # API Flask
-│   ├── model.py          # Chargement du modèle
-│   └── utils.py          # Fonctions utilitaires
-├── k8s/                  # Fichiers de configuration Kubernetes
-│   ├── Deployment.yaml
-│   ├── Service.yaml
-│   └── Ingress.yaml      # (Optionnel)
-├── models/               # Modèle ML sauvegardé (fichier .pkl)
-├── data/                 # Données d'entraînement (optionnel)
-├── Dockerfile            # Dockerfile pour construire l'image
-├── requirements.txt      # Liste des dépendances Python
-├── README.md             # Documentation du projet
-└── .gitignore            # Fichiers et dossiers ignorés par Git
+├ ── src/                  # Code source de l'application Flask
+│   ├ ── app.py            # API Flask
+│   ├ ── model.py          # Chargement du modèle
+│   └ ── utils.py          # Fonctions utilitaires
+├ ── k8s/                  # Fichiers de configuration Kubernetes
+│   ├ ── Deployment.yaml
+│   ├ ── Service.yaml
+│   └ ── Ingress.yaml      # (Optionnel)
+├ ── models/               # Modèle ML sauvegardé (fichier .pkl)
+├ ── data/                 # Données d'entraînement (optionnel)
+├ ── Dockerfile            # Dockerfile pour construire l'image
+├ ── requirements.txt      # Liste des dépendances Python
+├ ── README.md             # Documentation du projet
+└ ── .gitignore            # Fichiers et dossiers ignorés par Git
 
 ---
 
