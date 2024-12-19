@@ -60,11 +60,11 @@ minikube service house-price-service --url
 
 ## 📁 Structure du projet
 house-price-prediction/
-├ ── src/                  # Code source de l'application Flask
+\n├ ── src/                  # Code source de l'application Flask
 │   ├ ── app.py            # API Flask
 │   ├ ── model.py          # Chargement du modèle
 │   └ ── utils.py          # Fonctions utilitaires
-├ ── k8s/                  # Fichiers de configuration Kubernetes
+\n├ ── k8s/                  # Fichiers de configuration Kubernetes
 │   ├ ── Deployment.yaml
 │   ├ ── Service.yaml
 │   └ ── Ingress.yaml      # (Optionnel)
