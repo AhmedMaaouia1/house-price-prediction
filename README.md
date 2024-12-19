@@ -63,26 +63,26 @@ minikube service house-price-service --url
 ---
 
 ## 📁 Structure du projet
-house-price-prediction/
+house-price-prediction/  
 ├── data/                       # Données brutes et prétraitées  
-│   ├── Housing.csv             # Données initiales  
-│   └── processed_data.csv      # Données après prétraitement  
+│ ──├── Housing.csv             # Données initiales  
+│ ──└── processed_data.csv      # Données après prétraitement  
 ├── k8s/                        # Fichiers de configuration Kubernetes  
-│   ├── Deployment.yaml         # Déploiement des pods  
-│   ├── Ingress.yaml            # (Optionnel) Configuration de l'ingress  
-│   └── Service.yaml            # Service LoadBalancer pour exposer l'API  
+│ ──├── Deployment.yaml         # Déploiement des pods  
+│ ──├── Ingress.yaml            # (Optionnel) Configuration de l'ingress  
+│ ──└── Service.yaml            # Service LoadBalancer pour exposer l'API  
 ├── models/                     # Modèle de machine learning  
-│   └── house_price_model.pkl   # Modèle sauvegardé pour les prédictions  
+│ ──└── house_price_model.pkl   # Modèle sauvegardé pour les prédictions  
 ├── notebooks/                  # Analyse exploratoire et prétraitement  
-│   └── data_exploration.ipynb  # Notebook Jupyter pour l'exploration des données  
+│ ──└── data_exploration.ipynb  # Notebook Jupyter pour l'exploration des données  
 ├── src/                        # Code source de l'API Flask  
-│   ├── app.py                  # API Flask  
-│   ├── model.py                # Chargement du modèle ML  
-│   ├── utils.py                # Fonctions utilitaires  
-│   ├── static/                 # Fichiers CSS  
-│   │   └── style.css           # Style de l'interface  
-│   └── templates/              # Templates HTML  
-│       └── index.html          # Interface utilisateur  
+│ ──├── app.py                  # API Flask  
+│ ──├── model.py                # Chargement du modèle ML  
+│ ──├── utils.py                # Fonctions utilitaires  
+│ ──├── static/                 # Fichiers CSS  
+│ ──│ ──└── style.css           # Style de l'interface  
+│ ──└── templates/              # Templates HTML  
+│ ──────└── index.html          # Interface utilisateur  
 ├── venv/                       # Environnement virtuel (à ignorer)  
 ├── .dockerignore               # Fichiers ignorés pour Docker  
 ├── .gitignore                  # Fichiers ignorés pour Git  
