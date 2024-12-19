@@ -1,0 +1,24 @@
+# Dossiers et fichiers à ignorer
+__pycache__/
+*.pyc
+*.pyo
+
+# Virtual environment
+venv/
+.env
+
+# Logs et fichiers temporaires
+*.log
+*.sqlite3
+
+# Fichiers Docker et Kubernetes
+*.pid
+*.sock
+.env
+
+# Modèle ML (si tu ne veux pas inclure le modèle)
+models/house_price_model.pkl
+
+# Config de l'éditeur
+.idea/
+.vscode/
