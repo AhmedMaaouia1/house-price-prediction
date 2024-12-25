@@ -16,9 +16,6 @@ venv/
 *.sock
 .env
 
-# Modèle ML (si tu ne veux pas inclure le modèle)
-models/house_price_model.pkl
-
 # Config de l'éditeur
 .idea/
 .vscode/
