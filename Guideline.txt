@@ -1,0 +1,188 @@
+### Guide d'installation et d'exécution du projet House Price Prediction
+
+---
+
+## **1. Télécharger le projet depuis GitHub**
+
+1. **Cloner le dépôt GitHub :**
+   ```
+   git clone https://github.com/<ton-username>/house-price-prediction.git
+   ```
+   Remplace `<ton-username>` par ton nom d'utilisateur GitHub.
+
+2. **Naviguer dans le dossier du projet :**
+   ```
+   cd house-price-prediction
+   ```
+
+---
+
+## **2. Configurer l'environnement Python**
+
+1. **Créer un environnement virtuel :**
+   - Sous Windows :
+     ```
+     python -m venv venv
+     ```
+   - Sous macOS/Linux :
+     ```
+     python3 -m venv venv
+     ```
+
+2. **Activer l'environnement virtuel :**
+   - Sous Windows :
+     ```
+     venv\Scripts\activate
+     ```
+   - Sous macOS/Linux :
+     ```
+     source venv/bin/activate
+     ```
+
+3. **Installer les dépendances Python :**
+   ```
+   pip install -r requirements.txt
+   ```
+
+---
+
+## **3. Exécuter l'application localement**
+
+Dans le fichier app.py, il faut décommenter la ligne 10 et commenter la ligne 9 
+
+1. **Lancer l'application Flask :**
+   - Naviguer dans le dossier `src/` :
+     ```
+     cd src
+     ```
+   - Exécuter le fichier `app.py` :
+     ```
+     python app.py
+     ```
+
+2. **Accéder à l'application :**
+   - Ouvrir un navigateur et visiter l'URL suivante :
+     ```
+     http://127.0.0.1:5000
+     ```
+
+---
+
+## **4. Exécuter avec Docker**
+
+Dans le fichier app.py, il faut décommenter la ligne 9 et commenter la ligne 10
+Sortir du dossier src : cd ..
+Il faut que votre Docker Desktop est en cours d'exécution
+
+1. **Construire l'image Docker :**
+   ```
+   docker build -t house-price-api:latest .
+   ```
+
+2. **Lancer le conteneur Docker :**
+   ```
+   docker run -p 5000:5000 house-price-api:latest
+   ```
+
+3. **Accéder à l'application :**
+   - Ouvrir un navigateur et visiter :
+     ```
+     http://127.0.0.1:5000
+     ```
+
+---
+
+## **5. Exécuter avec Kubernetes**
+
+1. **Démarrer Minikube :**
+   ```
+   minikube start
+   ```
+
+2. **Configurer Docker pour utiliser Minikube :**
+   - Sous Windows :
+     ```
+     minikube docker-env | Invoke-Expression
+     ```
+   - Sous macOS/Linux :
+     ```
+     eval $(minikube docker-env)
+     ```
+
+3. **Construire l'image Docker :**
+   ```
+   docker build -t house-price-api:latest .
+   ```
+
+4. **Appliquer les fichiers Kubernetes :**
+   ```
+   kubectl apply -f k8s/
+   ```
+
+5. **Obtenir l'URL de l'application :**
+   ```
+   minikube service house-price-service --url
+   ```
+
+6. **Tester l'application :**
+   - Accéder à l'URL affichée par Minikube pour interagir avec l'interface utilisateur ou utiliser l'API `/predict` pour des requêtes POST.
+
+---
+
+## **6. Tester l'API avec un outil comme Postman**
+
+1. **Configurer une requête POST :**
+   - URL : `http://127.0.0.1:5000/predict` (ou l'URL obtenue via Kubernetes).
+   - Body (format JSON) :
+     ```
+     {
+       "area": 5000,
+       "bedrooms": 3,
+       "bathrooms": 2,
+       "stories": 2,
+       "mainroad": 1,
+       "guestroom": 0,
+       "basement": 1,
+       "hotwaterheating": 0,
+       "airconditioning": 1,
+       "parking": 1,
+       "prefarea": 1,
+       "furnishingstatus_semi-furnished": 0,
+       "furnishingstatus_unfurnished": 1
+     }
+     ```
+
+2. **Envoyer la requête et vérifier la réponse :**
+   - Exemple de réponse attendue :
+     ```
+     {
+       "predicted_price": 6664180.12
+     }
+     ```
+
+---
+
+## **7. Explorer le notebook (optionnel)**
+
+1. **Installer Jupyter Notebook :**
+   ```
+   pip install notebook
+   ```
+
+2. **Lancer le notebook :**
+   ```
+   jupyter notebook notebooks/data_exploration.ipynb
+   ```
+
+3. **Explorer le notebook :**
+   - Visualiser les étapes d'analyse des données et de prétraitement dans `data_exploration.ipynb`.
+
+---
+
+## **Résumé des outils requis :**
+
+- **Python 3.x** : Pour exécuter l'application Flask.
+- **Docker** : Pour le déploiement conteneurisé.
+- **Kubernetes** (Minikube) : Pour l'orchestration en cluster.
+- **Postman** ou `curl` : Pour tester l'API.
+- **Jupyter Notebook** : Pour explorer les données (facultatif).

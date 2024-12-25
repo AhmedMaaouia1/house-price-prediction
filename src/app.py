@@ -6,7 +6,9 @@ import numpy as np
 app = Flask(__name__)
 
 # Charger le modèle pré-entraîné
-model = joblib.load('models/house_price_model.pkl')
+model = joblib.load('models/house_price_model.pkl') # Avec Docker
+# model = joblib.load('models/house_price_model.pkl') # Exécution de l'application localement
+
 
 # Les colonnes numériques qui doivent être standardisées
 numeric_columns = ['area', 'bedrooms', 'bathrooms', 'stories', 'parking']
